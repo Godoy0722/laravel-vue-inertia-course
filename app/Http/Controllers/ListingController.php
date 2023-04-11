@@ -21,7 +21,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Listing/Create');
     }
 
     /**

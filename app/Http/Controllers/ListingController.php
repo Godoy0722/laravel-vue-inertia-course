@@ -29,7 +29,10 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Listing::create($request->all());
+
+        return redirect()->route('listings.index')
+            ->with('success', 'Listing was created');
     }
 
     /**

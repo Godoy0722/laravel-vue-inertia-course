@@ -9,10 +9,12 @@
 </template>
 
 <script setup>
-import {Link} from '@inertiajs/vue3'
+import {Link, usePage} from '@inertiajs/vue3'
 import {computed} from 'vue'
 
-const flashSuccess = computed(() => this.$page.props.flash.success)
+const page = usePage()
+
+const flashSuccess = computed(() => page.props.flash.success)
 </script>
 
 <style scoped>

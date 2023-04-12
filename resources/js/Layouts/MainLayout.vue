@@ -1,6 +1,6 @@
 <template>
-  <Link href="/listings">Listings</Link>&nbsp;
-  <Link href="/listings/create">New Listing</Link>
+  <Link :href="route('listings.index')">Listings</Link>&nbsp;
+  <Link :href="route('listings.create')">New Listing</Link>
 
   <div v-if="flashSuccess" class="success">
     {{ flashSuccess }}

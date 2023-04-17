@@ -1,5 +1,5 @@
 <template>
-  <div v-if="error">
+  <div v-if="error" class="input-error-msg">
     {{ error }}
   </div>
 </template>

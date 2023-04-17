@@ -1,56 +1,56 @@
 <template>
   <form @submit.prevent="update">
-    <div>
-      <div>
-        <label>Beds</label>
-        <input v-model.number="form.beds" type="text" />
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-span-2">
+        <label class="label">Beds</label>
+        <input v-model.number="form.beds" class="input" type="text" />
         <InputErrorMessage :error="form.errors.beds" />
       </div>
 
-      <div>
-        <label>Baths</label>
-        <input v-model.number="form.baths" type="text" />
+      <div class="col-span-2">
+        <label class="label">Baths</label>
+        <input v-model.number="form.baths" class="input" type="text" />
         <InputErrorMessage :error="form.errors.baths" />
       </div>
 
-      <div>
-        <label>Area</label>
-        <input v-model.number="form.area" type="text" />
+      <div class="col-span-2">
+        <label class="label">Area</label>
+        <input v-model.number="form.area" class="input" type="text" />
         <InputErrorMessage :error="form.errors.area" />
       </div>
 
-      <div>
-        <label>City</label>
-        <input v-model="form.city" type="text" />
+      <div class="col-span-4">
+        <label class="label">City</label>
+        <input v-model="form.city" class="input" type="text" />
         <InputErrorMessage :error="form.errors.city" />
       </div>
 
-      <div>
-        <label>Post Code</label>
-        <input v-model="form.code" type="text" />
+      <div class="col-span-2">
+        <label class="label">Post Code</label>
+        <input v-model="form.code" class="input" type="text" />
         <InputErrorMessage :error="form.errors.code" />
       </div>
 
-      <div>
-        <label>Street</label>
-        <input v-model="form.street" type="text" />
+      <div class="col-span-4">
+        <label class="label">Street</label>
+        <input v-model="form.street" class="input" type="text" />
         <InputErrorMessage :error="form.errors.street" />
       </div>
 
-      <div>
-        <label>Street Nr</label>
-        <input v-model.number="form.street_nr" type="text" />
+      <div class="col-span-2">
+        <label class="label">Street Nr</label>
+        <input v-model.number="form.street_nr" class="input" type="text" />
         <InputErrorMessage :error="form.errors.street_nr" />
       </div>
 
-      <div>
-        <label>Price</label>
-        <input v-model.number="form.price" type="text" />
+      <div class="col-span-6">
+        <label class="label">Price</label>
+        <input v-model.number="form.price" class="input" type="text" />
         <InputErrorMessage :error="form.errors.price" />
       </div>
 
-      <div>
-        <button type="submit">Edit</button>
+      <div class="col-span-6">
+        <button class="btn-primary" type="submit">Edit</button>
       </div>
     </div>
   </form>

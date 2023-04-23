@@ -21,13 +21,12 @@ class AuthController extends Controller
         ]), true)) {
             throw ValidationException::withMessages([
                 'email' => 'Authentication failed',
-                'password' => 'Authentication failed',
             ]);
         }
 
         $request->session()->regenerate();
 
-        return redirect()->intended();
+        return redirect()->intended('/listings');
     }
 
     public function destroy()

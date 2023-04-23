@@ -4,13 +4,15 @@
       <div>
         <label for="email" class="label">E-mail (username)</label>
         <input id="email" v-model="form.email" type="text" class="input" />
-        <InputErrorMessage error="Potential Error" />
+        <InputErrorMessage :error="form.errors.email" />
       </div>
 
       <div class="mt-4">
         <label for="password" class="label">Password</label>
         <input id="password" v-model="form.password" type="password" class="input" />
+        <InputErrorMessage :error="form.errors.password" />
       </div>
+
       <div class="mt-4">
         <button class="btn-primary w-full" type="submit">Login</button>
       </div>

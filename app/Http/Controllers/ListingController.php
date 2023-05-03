@@ -17,9 +17,16 @@ class ListingController extends Controller
 
     public function index(Request $request)
     {
+        $filters = $request->only(['priceFrom', 'priceTo', 'beds', 'baths', 'areaFrom', 'areaTo']);
+
+        $query = Listing::latest()
+            ->filters($filters)
+            ->paginate(10)
+            ->withQueryString();
+
         return inertia('Listing/Index', [
-            'filters' => $request->only(['priceFrom', 'priceTo', 'beds', 'baths', 'areaFrom', 'areaTo']),
-            'listings' => Listing::query()->orderByDesc('created_at')->paginate(10)
+            'filters' => $filters,
+            'listings' => $query
         ]);
     }
 

@@ -84,12 +84,4 @@ class ListingController extends Controller
         return redirect()->route('listings.index')
             ->with('success', 'Listing was updated');
     }
-
-    public function destroy(Listing $listing)
-    {
-        $listing->delete();
-
-        return redirect()->back()
-            ->with('success', 'Listing was deleted');
-    }
 }

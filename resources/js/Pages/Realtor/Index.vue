@@ -17,7 +17,13 @@
           <ListingAddress :listing="listing" class="text-gray-500" />
         </div>
         <div class="flex item-center gap-1 text-gray-600 dark:text-gray-300">
-          <Link class="link-btn" as="button">Preview</Link>
+          <a
+            class="link-btn"
+            :href="route('listings.show', { listing: listing.id })"
+            target="_blank"
+          >
+            Preview
+          </a>
           <Link class="link-btn" as="button">Edit</Link>
           <Link
             class="link-btn"

@@ -17,10 +17,10 @@
           <ListingAddress :listing="listing" class="text-gray-500" />
         </div>
         <div class="flex item-center gap-1 text-gray-600 dark:text-gray-300">
-          <Link class="btn-outline text-xs font-medium" as="button">Preview</Link>
-          <Link class="btn-outline text-xs font-medium" as="button">Edit</Link>
+          <Link class="link-btn" as="button">Preview</Link>
+          <Link class="link-btn" as="button">Edit</Link>
           <Link
-            class="btn-outline text-xs font-medium"
+            class="link-btn"
             :href="route('realtor.listing.destroy', { listing: listing.id })"
             method="DELETE"
             as="button"
@@ -51,3 +51,9 @@ defineProps({
     filters: Object,
 })
 </script>
+
+<style scoped>
+.link-btn {
+    @apply btn-outline text-xs font-medium;
+}
+</style>

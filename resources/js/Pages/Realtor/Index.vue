@@ -20,16 +20,16 @@
         <section>
           <div class="flex item-center gap-1 text-gray-600 dark:text-gray-300">
             <a
-              class="link-btn"
+              class="btn-outline text-xs font-medium"
               :href="route('listings.show', { listing: listing.id })"
               target="_blank"
             >
               Preview
             </a>
-            <Link class="link-btn" :href="route('realtor.listing.edit', { listing: listing.id })">Edit</Link>
+            <Link class="btn-outline text-xs font-medium" :href="route('realtor.listing.edit', { listing: listing.id })">Edit</Link>
             <Link
               v-if="!listing.deleted_at"
-              class="link-btn"
+              class="btn-outline text-xs font-medium"
               :href="route('realtor.listing.destroy', { listing: listing.id })"
               method="DELETE"
               as="button"
@@ -39,7 +39,7 @@
 
             <Link
               v-else
-              class="link-btn"
+              class="btn-outline text-xs font-medium"
               :href="route('realtor.listing.restore', { listing: listing.id })"
               method="PUT"
               as="button"
@@ -78,9 +78,3 @@ defineProps({
     filters: Object,
 })
 </script>
-
-<style scoped>
-.link-btn {
-    @apply btn-outline text-xs font-medium;
-}
-</style>

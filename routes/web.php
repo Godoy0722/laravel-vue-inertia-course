@@ -42,7 +42,7 @@ Route::prefix('realtor')->name('realtor.')->middleware('auth')->group(function (
         ->withTrashed();
 
     Route::resource('listing.image', RealtorListingImageController::class)
-        ->only(['create', 'store']);
+        ->only(['create', 'store', 'destroy']);
 });
 
 

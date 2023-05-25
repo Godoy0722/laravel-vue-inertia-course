@@ -12,6 +12,10 @@
         <button type="submit" class="btn-outline disabled:opacity-25 disabled:cursor-not-allowed" :disabled="!canUpload">Upload</button>
         <button type="reset" class="btn-outline" @click="reset">Reset</button>
       </section>
+
+      <div v-if="imageErrors.length" class="input-error-msg">
+        <div v-for="(error, index) in emageErrors" :key="index">{{ error }}</div>
+      </div>
     </form>
   </Box>
 
@@ -50,6 +54,8 @@ router.on('progress', (event) => {
 const form = useForm({
     images: [],
 })
+
+const imageErrors = computed(() => Object.values(form.errors))
 
 const canUpload = computed(() => form.images.length)
 
